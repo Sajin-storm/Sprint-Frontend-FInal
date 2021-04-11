@@ -108,7 +108,8 @@ export default function Login() {
       console.log(progress);
       console.log(user);
       if(user !== undefined){
-        history.push("/userscreen/"+user);
+        //history.push("/userscreen/"+user);
+        history.push("/booking/viewbyusername/"+user);
       }
 
       const classes = useStyles;

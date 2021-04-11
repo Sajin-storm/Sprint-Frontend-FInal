@@ -135,7 +135,7 @@ class ViewBookingByUser extends Component {
           <div >
             <br/>
             
-            {/* <Paper square style={{display:"flex",justifyContent:"center"}}>
+            <Paper square style={{display:"flex",justifyContent:"center"}}>
               <Tabs
                 value={0}
                 indicatorColor="primary"
@@ -147,11 +147,11 @@ class ViewBookingByUser extends Component {
                 <Tab label="My Bookings" onClick={this.viewBookingByUser.bind(this)} />
                
                 <Tab label="Add Booking" to="/add"  component={Link}/>
-                <Tab label="Add feedback" to={"/feedback/add"+this.props.match.params.username} component={Link} />
+                <Tab label="Add feedback" to={"/feedback/add/"+this.props.match.params.username} component={Link} />
                 <Tab label="Update Password" to={"/user/update/"+this.props.match.params.username} component={Link}/>
                 <Tab label="Home" to={"/"} component={Link}/>
               </Tabs>
-            </Paper> */}
+            </Paper>
 
             
 
