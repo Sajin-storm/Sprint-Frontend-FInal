@@ -73,7 +73,7 @@ class AddBus extends Component{
         this.totalSeats = React.createRef();
         this.fare = React.createRef();
 
-        this.state = {message: '',open: false}
+        this.state = {addBusMessage: '',open: false}
     }
 
     componentDidMount(){
@@ -177,7 +177,7 @@ class AddBus extends Component{
           </Button>
 
           <br/><br/>
-          <TextField  fullWidth disabled id="outlined-required" label={this.props.message} variant="standard"></TextField>        
+          <TextField  fullWidth disabled id="outlined-required" label={this.props.addBusMessage} variant="standard"></TextField>        
           <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose}>
                 <Alert onClose={this.handleClose} severity="success">
                     {this.props.message}
@@ -247,7 +247,7 @@ class AddBus extends Component{
 
 const mapStateToProps = (state) => {
     return{
-        message: state.message
+      addBusMessage: state.addBusMessage
     }
 }
 

@@ -2,7 +2,14 @@
 
 const initialState = {
     
+
     message: '',
+    addBusMessage:"",
+    addBookingMessage:"",
+    updateBookingMessage:"",
+    busOpSigninMessage:"",
+    addFeedbackMessage:"",
+    updateUserMessage:"",
     bookings: [],
     users:[],
     busOperators:[],
@@ -27,7 +34,7 @@ const reducer = (state = initialState, { type, payload }) => {
         
     case "ADD_BOOKING":
        // let newBookings = [...state.bookings, payload]
-        return {message: payload.message, bookings: state.bookings}
+        return {addBookingMessage: payload.message, bookings: state.bookings}
     case "DELETE_BOOKING":
         var filteredList = state.bookings.filter((booking)=>
             booking.bookingId !== payload.bookingId)
@@ -36,7 +43,7 @@ const reducer = (state = initialState, { type, payload }) => {
         console.log(payload)
         return {...state,bookings: payload}
     case "UPDATE_BOOKING":
-        return {bookings: state.bookings} 
+        return {updateBookingMessage:payload.message,bookings: state.bookings} 
     case "FIND_BOOKING_USER":
         console.log(payload)
         return {...state,bookings: payload}
@@ -53,7 +60,7 @@ const reducer = (state = initialState, { type, payload }) => {
         console.log(payload)
         return {...state,users: payload}
     case "UPDATE_USER":
-        return {message:payload.message,users: state.users}
+        return {updateUserMessage:payload.message, users: state.users}
     case "LOGIN_USER":
         return{users: state.users}
         
@@ -69,10 +76,10 @@ const reducer = (state = initialState, { type, payload }) => {
             bus.busNumber !== payload.busNumber)        
         return { bus: filteredList2 } 
     case "ADD_BUS":
-        return {message: payload.message, bus: state.bus} 
+        return {addBusMessage: payload.message, bus: state.bus} 
 
     case "ADD_FEEDBACK":
-        return {message: payload.message, feedbacks: state.feedbacks}
+        return {addFeedbackMessage: payload.message, feedbacks: state.feedbacks}
 
     case "FIND_FEEDBACK":
         console.log(payload)
@@ -102,7 +109,7 @@ const reducer = (state = initialState, { type, payload }) => {
     
     //busOp stuffs
     case "ADD_BUSOP":
-        return {...state, busOp: state.busOp, message: payload.message}
+        return {...state, busOp: state.busOp, busOpSigninMessage: payload.message}
     case "GET_REV":
         console.log(payload)
           return {...state, revenue: payload} 

@@ -30,11 +30,11 @@ class AddFeedback extends Component{
         this.comment = React.createRef()
         this.routeName = React.createRef()
 
-        this.state = {message:' '}
+        this.state = {addFeedbackMessage:' '}
     }
 
     addFeedback(event){
-        this.setState = {message: ''}
+        this.setState = {addFeedbackMessage: ''}
         this.props.onAddFeedback({
             username: this.props.match.params.username,
             rating: this.rating.current.value,
@@ -127,6 +127,19 @@ class AddFeedback extends Component{
           </Button>
       </Grid>
 
+      <Grid item xs={12} >
+          
+          <TextField 
+          fullWidth  
+          disabled 
+          id="outlined-required" 
+          label={this.props.addFeedbackMessage} 
+          variant="standard" 
+          InputProps={{readOnly: true,}}>
+          </TextField>
+          
+        </Grid>
+
         </Grid>
         </Container>
             </div>
@@ -137,7 +150,7 @@ class AddFeedback extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
+      addFeedbackMessage: state.addFeedbackMessage,
         
     }
 }

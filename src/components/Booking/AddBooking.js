@@ -42,7 +42,7 @@ class AddBooking extends Component {
 	this.journeyStartTime = React.createRef();
 	this.journeyEndTime = React.createRef();
 
-    this.state = {message: '',}
+    this.state = {addBookingMessage: '',}
     }
 
     addBooking(event){
@@ -57,7 +57,7 @@ class AddBooking extends Component {
         console.log('Start Time...',this.journeyStartTime.current.value)
         console.log('End Time...',this.journeyEndTime.current.value)
         
-        this.setState = {message: ''}
+        this.setState = {addBookingMessage: ''}
 
         this.props.onAddBooking({
             bookingId: this.bookingId.current.value, 
@@ -256,7 +256,7 @@ class AddBooking extends Component {
           fullWidth  
           disabled 
           id="outlined-required" 
-          label={this.props.message} 
+          label={this.props.addBookingMessage} 
           variant="standard" 
           InputProps={{readOnly: true,}}>
           </TextField>
@@ -335,7 +335,7 @@ class AddBooking extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
+      addBookingMessage: state.addBookingMessage,
         // bookings: state.bookings
     }
 }

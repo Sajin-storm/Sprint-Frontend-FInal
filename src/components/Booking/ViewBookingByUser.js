@@ -147,42 +147,13 @@ class ViewBookingByUser extends Component {
                 <Tab label="My Bookings" onClick={this.viewBookingByUser.bind(this)} />
                
                 <Tab label="Add Booking" to="/add"  component={Link}/>
-                <Tab label="Add feedback" to="/feedback/add" component={Link} />
+                <Tab label="Add feedback" to={"/feedback/add"+this.props.match.params.username} component={Link} />
                 <Tab label="Update Password" to={"/user/update/"+this.props.match.params.username} component={Link}/>
                 <Tab label="Home" to={"/"} component={Link}/>
               </Tabs>
             </Paper> */}
 
-            {/* <Button  
-              variant="contained" 
-              color="primary" 
-              onClick={this.viewBookingByUser.bind(this)}
-              >View your bookings
-            </Button>
-
-            <Link to='/add'>
-            <Button  
-              variant="contained" 
-              color="primary" 
-              >Add Booking
-            </Button>
-            </Link>
-
-            <Link to="/feedback/add">
-            <Button  
-              variant="contained" 
-              color="primary" 
-              >Add Feedback
-            </Button>
-            </Link>
-
-            <Link to={"/user/update/"+this.props.match.params.username}>
-            <Button  
-              variant="contained" 
-              color="primary" 
-              >Update your password
-            </Button>
-            </Link> */}
+            
 
             <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="sticky table">

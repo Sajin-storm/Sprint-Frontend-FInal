@@ -27,7 +27,7 @@ class UpdateUser extends Component{
         this.username = React.createRef();
         this.password = React.createRef();
 
-        this.state = {message: ''}
+        this.state = {updateUserMessage: ''}
     }
 
     updateUser(event){
@@ -93,6 +93,17 @@ class UpdateUser extends Component{
                 </Button>
                 </Grid>
 
+            <Grid item xs={12}>
+                <TextField 
+          fullWidth  
+          disabled 
+          id="outlined-required" 
+          label={this.props.updateUserMessage} 
+          variant="standard" 
+          InputProps={{readOnly: true,}}>
+          </TextField>
+          </Grid>
+
                 </Grid>
                 </form>
                 </Container>
@@ -104,7 +115,7 @@ class UpdateUser extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
+        updateUserMessage: state.updateUserMessage,
         // bookings: state.bookings
     }
 }

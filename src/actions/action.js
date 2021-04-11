@@ -171,7 +171,7 @@ export const deleteBooking = (bookingId) => {
       .then((data) => {
         console.log(data);
         dispatch(removeBooking({ bookings: data, message }));
-        dispatch(fetchBookings());
+        //dispatch(fetchBookings());
       });
   };
 };
@@ -197,8 +197,6 @@ export const updateBookings = (id, date) => {
     ).then((response) => {
       console.log(response.status);
       if (response.status === 200) {
-        //this.setState({date: this.date.current.value})
-        //this.setState({message: 'Booking updated sucessfully!'})
         dispatch(updateBooking());
       }
     });

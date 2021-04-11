@@ -76,8 +76,8 @@ class ViewUser extends Component{
                 <StyledTableCell align="center">{user.password}</StyledTableCell>
                 {/* <StyledTableCell align="center">
                   <Button variant="contained" color="secondary" className={classes.button} startIcon={<DeleteIcon />} onClick={this.deleteUser.bind(this, user.username)}>Delete</Button>
-                </StyledTableCell>
-                <StyledTableCell align="center">
+                </StyledTableCell> */}
+                {/* <StyledTableCell align="center">
                     <Link to={"/user/update/" + user.username}>
                         <Button variant="contained" color="primary" className={classes.button} >
                             Update

@@ -27,7 +27,7 @@ class UpdateBooking extends Component {
         this.bookingId = React.createRef();
         this.date = React.createRef();
 
-        this.state = {message: ''}
+        this.state = {updateBookingMessage: ''}
     }
 
     updateBooking(event){
@@ -94,6 +94,17 @@ class UpdateBooking extends Component {
                 </Button>
                 </Grid>
 
+                <Grid item xs={12}>
+                <TextField 
+          fullWidth  
+          disabled 
+          id="outlined-required" 
+          label={this.props.updateBookingMessage} 
+          variant="standard" 
+          InputProps={{readOnly: true,}}>
+          </TextField>
+          </Grid>
+
 
                 </Grid>
                 </form>
@@ -134,7 +145,7 @@ class UpdateBooking extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
+        updateBookingMessage: state.updateBookingMessage,
         // bookings: state.bookings
     }
 }

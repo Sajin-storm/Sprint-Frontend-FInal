@@ -24,7 +24,7 @@ class BusOpSignIn extends Component {
         super();
         this.busOperatorUsername = React.createRef();
         this.password = React.createRef();
-        this.state = {message: '', open: false}
+        this.state = {busOpSigninMessage: '', open: false}
     }
 
     addBusop(event) {
@@ -101,9 +101,9 @@ class BusOpSignIn extends Component {
                     <div className='w-100 text-center mt-2'>
                         <Link to="/">Back to homepage</Link>
                     </div>
-                    {this.props.message && 
+                    {this.props.busOpSigninMessage && 
                         <Snackbar open={this.state.open} autoHideDuration={6000} onClose={this.handleClose}>
-                        <Alert onClose={this.handleClose} severity="success">{this.props.message}</Alert>
+                        <Alert onClose={this.handleClose} severity="success">{this.props.busOpSigninMessage}</Alert>
                         </Snackbar>}
                 </Card.Body>
             </Card>
@@ -113,7 +113,7 @@ class BusOpSignIn extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message
+        busOpSigninMessage: state.busOpSigninMessage
     }
 }
 
