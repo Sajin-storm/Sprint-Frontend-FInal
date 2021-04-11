@@ -45,43 +45,36 @@ import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
-import MuiAccordion from "@material-ui/core/Accordion";
 import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
-import MuiAccordionDetails from "@material-ui/core/AccordionDetails";
-
-import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import { useSelector } from "react-redux";
 
 import AdminScreen from "./Screens/AdminScreen";
 import BusOperatorScreen from "./Screens/BusOperatorScreen";
-import UserScreen from "./Screens/UserScreen"
+import UserScreen from "./Screens/UserScreen";
 
 //history import parts
 import { createBrowserHistory } from "history";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import BusOpSignIn from "./components/BusOperator/BusOpSignIn";
 
 //history part
 var hist = createBrowserHistory();
 
-const Accordion = withStyles({
-  root: {
-    border: "1px solid rgba(0, 0, 0, .125)",
-    boxShadow: "none",
-    "&:not(:last-child)": {
-      borderBottom: 0,
-    },
-    "&:before": {
-      display: "none",
-    },
-    "&$expanded": {
-      margin: 0, //this makes the accordion run smoothly
-    },
-  },
-  expanded: {},
-})(MuiAccordion);
+// const Accordion = withStyles({
+//   root: {
+//     border: "1px solid rgba(0, 0, 0, .125)",
+//     boxShadow: "none",
+//     "&:not(:last-child)": {
+//       borderBottom: 0,
+//     },
+//     "&:before": {
+//       display: "none",
+//     },
+//     "&$expanded": {
+//       margin: 0, //this makes the accordion run smoothly
+//     },
+//   },
+//   expanded: {},
+// })(MuiAccordion);
 
 const AccordionSummary = withStyles({
   root: {
@@ -101,11 +94,11 @@ const AccordionSummary = withStyles({
   expanded: {},
 })(MuiAccordionSummary);
 
-const AccordionDetails = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiAccordionDetails);
+// const AccordionDetails = withStyles((theme) => ({
+//   root: {
+//     padding: theme.spacing(2),
+//   },
+// }))(MuiAccordionDetails);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -190,12 +183,6 @@ function App(props) {
   const classes = useStyles();
   const classes1 = useStyles1();
 
-  const [expanded, setExpanded] = React.useState();
-
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
-
   const theme = useTheme();
 
   const [open, setOpen] = React.useState(false);
@@ -207,8 +194,6 @@ function App(props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const username = useSelector((state) => state.users);
 
   return (
     <Router history={hist}>
@@ -332,14 +317,18 @@ function App(props) {
               <AddBus />
             </Route>
 
-            <Route exact path="/feedback/add/:username" component={AddFeedback}/>
+            <Route
+              exact
+              path="/feedback/add/:username"
+              component={AddFeedback}
+            />
             <Route exact path="/feedback/getall">
               <ViewFeedback />
             </Route>
             <Route exact path="/adminscreen">
               <AdminScreen />
             </Route>
-            <Route exact path="/userscreen/:username" component={UserScreen}/>
+            <Route exact path="/userscreen/:username" component={UserScreen} />
             <Route exact path="/busoperatorscreen">
               <BusOperatorScreen />
             </Route>

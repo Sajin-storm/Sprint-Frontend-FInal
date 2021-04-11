@@ -1,123 +1,129 @@
 // make changes in store's state
 
 const initialState = {
-    
+  message: "",
+  addBusMessage: "",
+  addBookingMessage: "",
+  updateBookingMessage: "",
+  busOpSigninMessage: "",
+  addFeedbackMessage: "",
+  updateUserMessage: "",
+  bookings: [],
+  users: [],
+  busOperators: [],
+  feedbacks: [],
+  bus: [],
+  busOp: [],
 
-    message: '',
-    addBusMessage:"",
-    addBookingMessage:"",
-    updateBookingMessage:"",
-    busOpSigninMessage:"",
-    addFeedbackMessage:"",
-    updateUserMessage:"",
-    bookings: [],
-    users:[],
-    busOperators:[],
-    feedbacks:[],
-    bus:[],
-    busOp:[],
-
-    //login stuffs
-    errorMessage:'',
-    user: undefined,
-    progress: false,
-    login: false,
-    admin: undefined,
-    busOps:undefined,
-    revenue:0,
-}
+  //login stuffs
+  errorMessage: "",
+  user: undefined,
+  progress: false,
+  login: false,
+  admin: undefined,
+  busOps: undefined,
+  revenue: 0,
+};
 
 const reducer = (state = initialState, { type, payload }) => {
-
-    //console.log(type);
-    switch (type) {
-        
+  //console.log(type);
+  switch (type) {
     case "ADD_BOOKING":
-       // let newBookings = [...state.bookings, payload]
-        return {addBookingMessage: payload.message, bookings: state.bookings}
+      // let newBookings = [...state.bookings, payload]
+      return { addBookingMessage: payload.message, bookings: state.bookings };
     case "DELETE_BOOKING":
-        var filteredList = state.bookings.filter((booking)=>
-            booking.bookingId !== payload.bookingId)
-        return {bookings: filteredList}
+      var filteredList = state.bookings.filter(
+        (booking) => booking.bookingId !== payload.bookingId
+      );
+      return { bookings: filteredList };
     case "FIND_BOOKINGS":
-        console.log(payload)
-        return {...state,bookings: payload}
+      console.log(payload);
+      return { ...state, bookings: payload };
     case "UPDATE_BOOKING":
-        return {updateBookingMessage:payload.message,bookings: state.bookings} 
+      return {
+        updateBookingMessage: payload.message,
+        bookings: state.bookings,
+      };
     case "FIND_BOOKING_USER":
-        console.log(payload)
-        return {...state,bookings: payload}
-    
-    
+      console.log(payload);
+      return { ...state, bookings: payload };
 
     case "ADD_USER":
-        return {message: payload.message, users: state.users}
+      return { message: payload.message, users: state.users };
     case "DELETE_USER":
-        var filteredList1 = state.users.filter((user)=>
-            user.username !== payload.username)        
-        return { users: filteredList1 }   
+      var filteredList1 = state.users.filter(
+        (user) => user.username !== payload.username
+      );
+      return { users: filteredList1 };
     case "FIND_USER":
-        console.log(payload)
-        return {...state,users: payload}
+      console.log(payload);
+      return { ...state, users: payload };
     case "UPDATE_USER":
-        return {updateUserMessage:payload.message, users: state.users}
+      return { updateUserMessage: payload.message, users: state.users };
     case "LOGIN_USER":
-        return{users: state.users}
-        
+      return { users: state.users };
+
     case "FIND_BUSOPERATOR":
-        console.log(payload)
-        return {...state,busOperators: payload}
+      console.log(payload);
+      return { ...state, busOperators: payload };
 
     case "FIND_BUS":
-        console.log(payload)
-        return {...state,bus: payload}
+      console.log(payload);
+      return { ...state, bus: payload };
     case "DELETE_BUS":
-        var filteredList2 = state.bus.filter((bus)=>
-            bus.busNumber !== payload.busNumber)        
-        return { bus: filteredList2 } 
+      var filteredList2 = state.bus.filter(
+        (bus) => bus.busNumber !== payload.busNumber
+      );
+      return { bus: filteredList2 };
     case "ADD_BUS":
-        return {addBusMessage: payload.message, bus: state.bus} 
+      return { addBusMessage: payload.message, bus: state.bus };
 
     case "ADD_FEEDBACK":
-        return {addFeedbackMessage: payload.message, feedbacks: state.feedbacks}
+      return {
+        addFeedbackMessage: payload.message,
+        feedbacks: state.feedbacks,
+      };
 
     case "FIND_FEEDBACK":
-        console.log(payload)
-        return {...state,feedbacks: payload}
+      console.log(payload);
+      return { ...state, feedbacks: payload };
 
-    //bus Op login stuffs 
+    //bus Op login stuffs
     case "PROGRESS":
-        return {...state, progress: payload};
+      return { ...state, progress: payload };
     case "LOGIN":
-        return {...state, loginSuccess: payload};
+      return { ...state, loginSuccess: payload };
     case "ERROR_BUSOP":
-        return {...state, errorMessage: payload};
+      return { ...state, errorMessage: payload };
     case "GET_BUSOP":
-        return {...state,busOps: payload};
+      return { ...state, busOps: payload };
 
     //user login stuffs
     case "GET_USER":
-        return {...state,user: payload};
+      return { ...state, user: payload };
     case "ERROR_USER":
-        return {...state, errorMessage: payload};
-        
+      return { ...state, errorMessage: payload };
+
     //admin login
     case "GET_ADMIN":
-        return {...state, admin:payload}
+      return { ...state, admin: payload };
     case "ERROR_ADMIN":
-        return {...state, errorMessage: payload};
-    
+      return { ...state, errorMessage: payload };
+
     //busOp stuffs
     case "ADD_BUSOP":
-        return {...state, busOp: state.busOp, busOpSigninMessage: payload.message}
+      return {
+        ...state,
+        busOp: state.busOp,
+        busOpSigninMessage: payload.message,
+      };
     case "GET_REV":
-        console.log(payload)
-          return {...state, revenue: payload} 
-    
+      console.log(payload);
+      return { ...state, revenue: payload };
+
     default:
-        return state
-    
-    }
-}
+      return state;
+  }
+};
 
 export default reducer;
