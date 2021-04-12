@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 // import { connect } from 'react-redux';
 import * as actions from "../../actions/action";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,7 +30,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       {/* <Link color="inherit" href="https://material-ui.com/"> */}
-      Your Website
+      Batch 2-Group 7 @Capgemini Internship Program JEEFSWithReact
       {/* </Link>*/} {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -72,7 +72,7 @@ export default function Login() {
   const password = useRef();
   const errorMessage = useSelector((state) => state.errorMessage);
 
-  const history = useHistory();
+  //const history = useHistory();
   const [open, setOpen] = React.useState(true);
 
   // const handleClick = () => {
@@ -102,7 +102,8 @@ export default function Login() {
   console.log(user);
   if (user !== undefined) {
     //history.push("/userscreen/"+user);
-    history.push("/booking/viewbyusername/" + user);
+    //history.push("/booking/viewbyusername/" + user);
+    return <Redirect to={"/booking/viewbyusername/"+user}/>
   }
 
   const classes = useStyles;

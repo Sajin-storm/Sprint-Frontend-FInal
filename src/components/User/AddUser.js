@@ -21,7 +21,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       {/* <Link color="inherit" href="https://material-ui.com/"> */}
-      Your Website
+      Batch 2-Group 7 @Capgemini Internship Program JEEFSWithReact
       {/* </Link>*/} {new Date().getFullYear()}
       {"."}
     </Typography>

@@ -249,23 +249,23 @@ function App(props) {
           <br />
           <AccordionSummary>
             <Link to="/">
-              <Typography variant="h6">HomePage</Typography>
+              <Typography variant="subtitle2">HomePage</Typography>
             </Link>
             <Divider />
           </AccordionSummary>
           <AccordionSummary>
             <Link to="/user/login">
-              <h5>User login</h5>
+              <Typography variant="subtitle2">User Login</Typography>
             </Link>
           </AccordionSummary>
           <AccordionSummary>
             <Link to="/admin/login">
-              <Typography variant="h6">Admin login</Typography>
+              <Typography variant="subtitle2">Admin login</Typography>
             </Link>
           </AccordionSummary>
           <AccordionSummary>
             <Link to="/busoperator/login">
-              <Typography variant="h6">Bus Operator login</Typography>
+              <Typography variant="subtitle2">Bus Operator login</Typography>
             </Link>
             <Divider />
           </AccordionSummary>

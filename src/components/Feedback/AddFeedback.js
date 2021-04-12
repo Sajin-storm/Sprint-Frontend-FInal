@@ -80,6 +80,7 @@ class AddFeedback extends Component {
               >
                 <TextField
                   fullWidth
+                  type="number"
                   required={true}
                   inputRef={this.rating}
                   label="Enter Rating"
