@@ -5,6 +5,7 @@ import { Form, Button, Card } from "react-bootstrap";
 import Snackbar from "@material-ui/core/Snackbar";
 import { Link } from "react-router-dom";
 import MuiAlert from "@material-ui/lab/Alert";
+import Container from "@material-ui/core/Container";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -76,9 +77,10 @@ class BusOpSignIn extends Component {
       //     </Card>
       //     </Grid>
       // </Grid>
+      <Container component="main" maxWidth="xs">
       <Card bg="white" text="dark">
         <Card.Body>
-          <h2 className="text-center mb-4">BusOp Sign Up</h2>
+          <h2 className="text-center mb-4">New BusOp</h2>
           <Form>
             <Form.Group id="username">
               <Form.Label>
@@ -120,6 +122,7 @@ class BusOpSignIn extends Component {
           )}
         </Card.Body>
       </Card>
+      </Container>
     );
   }
 }

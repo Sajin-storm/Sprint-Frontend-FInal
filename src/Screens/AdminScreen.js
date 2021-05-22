@@ -332,7 +332,7 @@ export default function AdminScreen() {
 
         <br />
         <Typography
-          variant="h5"
+          variant="h6"
           style={{ display: "flex", justifyContent: "center" }}
         >
           <b>New BusOperator</b>

@@ -95,7 +95,7 @@ class AddBooking extends Component {
         <br />
 
         <Container component="main" maxWidth="xs">
-          <Grid container spacing={2}>
+          <Grid container spacing={2} required={true}>
             <Grid item xs={12}>
               <Paper
                 className={classes.paper}
@@ -119,6 +119,7 @@ class AddBooking extends Component {
               >
                 <TextField
                   fullWidth
+                  required={true}
                   inputRef={this.username}
                   label="Enter Username"
                   variant="outlined"
@@ -196,7 +197,7 @@ class AddBooking extends Component {
                   fullWidth
                   required={true}
                   inputRef={this.amountPaid}
-                  type="number"
+                  
                   label="Enter Amount"
                   variant="outlined"
                 ></TextField>

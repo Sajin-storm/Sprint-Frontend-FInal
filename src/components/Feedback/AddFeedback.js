@@ -23,14 +23,14 @@ class AddFeedback extends Component {
     super();
     this.username = React.createRef();
     this.rating = React.createRef();
-    this.comment = React.createRef();
+    this.comment = React.createRef(); 
     this.routeName = React.createRef();
 
     this.state = { addFeedbackMessage: " " };
   }
 
   addFeedback(event) {
-    this.setState = { addFeedbackMessage: "" };
+    this.setState ({ addFeedbackMessage: "" })   
     this.props.onAddFeedback({
       username: this.props.match.params.username,
       rating: this.rating.current.value,

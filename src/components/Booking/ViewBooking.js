@@ -13,6 +13,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Container from "@material-ui/core/Container";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -95,7 +96,7 @@ class ViewBooking extends Component {
     return (
       <div>
         <br />
-
+        <Container component="main" maxWidth="xl">
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="sticky table">
             <TableHead>
@@ -115,6 +116,7 @@ class ViewBooking extends Component {
             <TableBody>{bookingList}</TableBody>
           </Table>
         </TableContainer>
+        </Container>
       </div>
     );
   }

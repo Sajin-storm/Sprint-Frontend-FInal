@@ -27,7 +27,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       {/* <Link color="inherit" href="https://material-ui.com/"> */}
-      Your Website
+      Batch 2-Group 7 @Capgemini Internship Program JEEFSWithReact
       {/* </Link>*/} {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -119,12 +119,12 @@ class AddBus extends Component {
               Adding a new Bus
             </Typography>
             <br />
-            <form className={classes.form} noValidate>
+            <form className={classes.form} >
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
-                    required
+                    required ={true}
                     fullWidth
                     label="Enter BusNumber"
                     style={{
@@ -136,8 +136,9 @@ class AddBus extends Component {
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
-                    required
+                    required={true}
                     fullWidth
+                    type="number"
                     label="Enter total seats"
                     inputRef={this.totalSeats}
                     style={{
@@ -148,8 +149,9 @@ class AddBus extends Component {
                 <Grid item xs={12}>
                   <TextField
                     variant="outlined"
-                    required
+                    required = {true}
                     fullWidth
+                    type="number"
                     label="Enter fare"
                     inputRef={this.fare}
                     style={{

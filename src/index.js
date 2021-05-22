@@ -15,7 +15,7 @@ const logger = (store) => (next) => action => {
 }
 
 //linking redux with react so that store can be used everywhere 
-const store = createStore(reducer, applyMiddleware(logger,thunk));
+const store = createStore(reducer, applyMiddleware(logger,thunk)); 
 
 
 ReactDOM.render(

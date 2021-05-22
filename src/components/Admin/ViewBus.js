@@ -12,6 +12,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Container from "@material-ui/core/Container";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -81,6 +82,7 @@ class ViewBus extends Component {
 
     return (
       <div>
+        <Container component="main" maxWidth="md">
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -96,6 +98,7 @@ class ViewBus extends Component {
             <TableBody>{busList}</TableBody>
           </Table>
         </TableContainer>
+        </Container>
       </div>
     );
   }

@@ -53,7 +53,7 @@ class UpdateUser extends Component {
             Update Your Password
           </Typography>
           <br />
-          <form className={classes.form} noValidate>
+          <form className={classes.form} >
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -71,13 +71,13 @@ class UpdateUser extends Component {
 
               <Grid item xs={12}>
                 <TextField
+                  required={true}
                   inputRef={this.password}
                   type="password"
                   label="Enter new password to be updated"
                   variant="outlined"
-                  required
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
+                  // InputLabelProps={{ shrink: true }}
                   style={{
                     backgroundImage: " linear-gradient(#ECF4FF, white)",
                   }}

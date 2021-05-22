@@ -55,10 +55,14 @@ class ViewBookingByUser extends Component {
     this.state = { bookings: [] };
   }
 
+ 
+
   componentDidMount() {
     console.log("Initialization...");
     this.props.onViewBookingByUser(this.props.match.params.username);
   }
+
+  
 
   viewBookingByUser(event) {
     console.log("username...", this.props.match.params.username);

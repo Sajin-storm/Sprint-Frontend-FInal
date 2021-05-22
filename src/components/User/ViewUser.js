@@ -10,6 +10,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+//import { Button } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -63,7 +65,7 @@ class ViewUser extends Component {
           <StyledTableCell align="center">{user.username}</StyledTableCell>
           <StyledTableCell align="center">{user.password}</StyledTableCell>
           {/* <StyledTableCell align="center">
-                  <Button variant="contained" color="secondary" className={classes.button} startIcon={<DeleteIcon />} onClick={this.deleteUser.bind(this, user.username)}>Delete</Button>
+                  <Button variant="contained" color="secondary" className={classes.button} onClick={this.deleteUser.bind(this, user.username)}>Delete</Button>
                 </StyledTableCell> */}
           {/* <StyledTableCell align="center">
                     <Link to={"/user/update/" + user.username}>
@@ -80,6 +82,7 @@ class ViewUser extends Component {
 
     return (
       <div>
+        <Container component="main" maxWidth="md">
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -96,6 +99,7 @@ class ViewUser extends Component {
             <TableBody>{userList}</TableBody>
           </Table>
         </TableContainer>
+        </Container>
       </div>
     );
   }

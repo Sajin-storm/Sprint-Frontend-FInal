@@ -53,7 +53,7 @@ import UserScreen from "./Screens/UserScreen";
 
 //history import parts
 import { createBrowserHistory } from "history";
-import { Typography } from "@material-ui/core";
+import {  Typography } from "@material-ui/core";
 import BusOpSignIn from "./components/BusOperator/BusOpSignIn";
 
 //history part
@@ -196,6 +196,7 @@ function App(props) {
   };
 
   return (
+    
     <Router history={hist}>
       <div className={classes.root}>
         <CssBaseline />
@@ -206,7 +207,9 @@ function App(props) {
             [classes1.appBarShift]: open,
           })}
         >
+            
           <Toolbar>
+          
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -216,14 +219,11 @@ function App(props) {
             >
               <MenuIcon />
             </IconButton>
-            <h2>
-              <i>
-                <b>Blue-Bus</b>
-              </i>
-            </h2>
+            <Link to="/"><Typography variant="h4" style={{color:"white"}}><i>BlueBus</i></Typography></Link>
+            
           </Toolbar>
         </AppBar>
-
+        
         <Drawer
           className={classes1.drawer}
           style={{ textShadow: "0.5px 0.5px #E3EEFF" }}
@@ -249,7 +249,7 @@ function App(props) {
           <br />
           <AccordionSummary>
             <Link to="/">
-              <Typography variant="subtitle2">HomePage</Typography>
+              <Typography variant="subtitle2">Home Page</Typography>
             </Link>
             <Divider />
           </AccordionSummary>
@@ -270,31 +270,33 @@ function App(props) {
             <Divider />
           </AccordionSummary>
         </Drawer>
+        
 
         <main
-          style={{ backgroundImage: " linear-gradient(lightBlue, white)" }}
+          style={{ backgroundImage: " linear-gradient(#6871F1, white)" }}
           className={clsx(classes1.content, {
             [classes.contentShift]: open,
           })}
         >
           <div className={classes1.drawerHeader} />
         </main>
-
+        
         <div>
           <Switch>
+
             <Route exact path="/user/login">
               <LoginUser />
             </Route>
             <Route exact path="/add">
               <AddBooking />
             </Route>
-            <Route exact path="/view">
+            <Route exact path="/view">  
               <ViewBooking />
             </Route>
             <Route
               exact
               path="/booking/viewbyusername/:username"
-              component={ViewBookingByUser}
+              component={ViewBookingByUser}  
             />
             <Route exact path="/update/:id" component={UpdateBooking} />
             <Route exact path="/detailview/:id" component={DetailViewBooking} />
@@ -362,7 +364,12 @@ function App(props) {
           </Switch>
         </div>
       </div>
+      <Typography variant="h6"
+      style={{textAlign:"center",color:"gray"}}>Made By Sadathulla Shariff and Sajin S</Typography>
+      
     </Router>
+    
+    
   );
 }
 

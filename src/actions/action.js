@@ -343,7 +343,7 @@ const updateUser = () => {
 
 export const updateUsers = (username, password) => {
   const requestOptions = {
-    method: "PUT",
+    method: "PUT",   
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username: username, password: password }),
   };

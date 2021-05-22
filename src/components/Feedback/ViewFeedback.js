@@ -10,6 +10,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Container from "@material-ui/core/Container";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -67,6 +68,7 @@ class ViewFeedback extends Component {
 
     return (
       <div>
+        <Container component="main" maxWidth="md">
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -83,6 +85,7 @@ class ViewFeedback extends Component {
             <TableBody>{feedbackList}</TableBody>
           </Table>
         </TableContainer>
+        </Container>
       </div>
     );
   }

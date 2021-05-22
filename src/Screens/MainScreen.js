@@ -25,7 +25,7 @@ export default function Screen1() {
   return (
     <div
       className={classes.root}
-      style={{ display: "flex", justifyContent: "center" }}
+      style={{ display: "flex", justifyContent: "center", }}
     >
       <Paper
         elevation={3}

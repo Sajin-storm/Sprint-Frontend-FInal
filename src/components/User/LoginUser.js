@@ -135,7 +135,7 @@ export default function Login() {
               <Alert severity="error">{errorMessage}</Alert>
             </Snackbar>
           )}
-          <form className={classes.form} noValidate>
+          <form className={classes.form} >
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
